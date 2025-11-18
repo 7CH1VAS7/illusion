@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'TrajanPro3Regular';
+    src: url('../font-15/TrajanPro3SemiBold.woff2') format('woff2'),
+         url('../font-15/TrajanPro3SemiBold.woff') format('woff'),
+         url('../font-15/TrajanPro3SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Для лучшей производительности */
+}
+@font-face {
+    font-family: 'GothamPro';
+    src: url('../font-16/GothamPro.woff2') format('woff2'),
+         url('../font-16/GothamPro.woff') format('woff'),
+        url('../font-16/GothamPro.woff.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.header_sky-const{
+    display: flex;
+    margin-top: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+header{
+    height: 100vh;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.552);
+    margin-bottom: 0px;
+}
+body{
+    position: relative;
+    z-index: 1;
+    margin: 0px;
+    background-color: black;
+    font-family: 'GothamPro', GothamPro ;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular ;
+
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+a:hover{
+    color:khaki;
+}
+
+
+
+.nav-bar a{
+    font-size: 12px;
+    margin-left: 10px;
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular ;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.messenger-group{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.contacts{
+    margin-right: 10px;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: khaki; /* Цвет текста */
+    border: 2px solid khaki; /* Обводка */
+    background-color: transparent; /* Прозрачный фон */
+    border-radius: 8px; /* Закругление углов */
+    transition: all 0.3s ease;
+}
+.header-vid{
+    position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            object-fit: cover;
+            
+}
+
+
+.flex-vertical{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.flex-horizontal{
+    display: flex;
+    align-items: center;
+}
+
+
+.content-vid{
+    margin-top: 120px;
+    height: 400px;
+}
+
+.text-boxsize{
+    height: 100px;
+}
+
+
+
+
+.section-for{
+    background-image: url('../img/Fon.png');
+    background-color: black;
+    background-repeat: repeat;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 120vh;
+    background-repeat: repeat;
+}
+.section-for h2{
+    color:khaki;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.gradient-text {
+    background: linear-gradient(180deg, #FFD700, #fff9d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: 
+        linear-gradient(black, black) padding-box,
+        linear-gradient(45deg, #FFD700, #fddb84) border-box;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+
+/* Иконки */
+.item img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+.item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .group {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fs-40{
+    font-size:60px ;
+}
+
+
+.HaW10{
+height: auto;
+width: 10px;
+}
+.HaW20{
+height: auto;
+width: 20px;
+}
+.HaW30{
+height: auto;
+width: 30px;
+}
+#HaW40{
+height: auto;
+width: 40px;
+}
+.HaW50{
+height: auto;
+width: 50px;
+}
+.HaW60{
+height: auto;
+width: 60px;
+}
+.HaW70{
+height: auto;
+width: 70px;
+}
+.HaW80{
+height: auto;
+width: 80px;
+}
+.HaW90{
+height: auto;
+width: 90px;
+}
+.HaW100{
+height: auto;
+width: 100px;
+}
+.HaW150{
+height: auto;
+width: 150px;
+}
+.HaW500{
+height: auto;
+width: 500px;
+}

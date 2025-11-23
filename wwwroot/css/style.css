@@ -635,6 +635,71 @@ footer {
     display: inline-block;
 }
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 12px;
+    margin-left: 10px;
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular;
+    text-decoration: none;
+    color: aliceblue;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: khaki;
+}
+
+/* Бургер-кнопка (скрыта на десктопе) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background: aliceblue;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Анимация бургера при клике */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Оверлей для затемнения фона */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
 
 
 
@@ -891,6 +956,16 @@ footer {
         margin-left: 20px;
         margin-right: 20px;
     }
+
+    .nav-links {
+        width: 100%;
+        padding: 100px 20px 30px;
+    }
+    
+    .nav-links a {
+        font-size: 16px;
+        padding: 15px 0;
+    }
     
     .nav-bar {
         display: flex;
@@ -1128,6 +1203,56 @@ footer {
         flex-wrap: wrap;
         flex-direction: column;
     }
+
+    .nav-bar {
+        position: relative;
+    }
+    
+    /* Показываем бургер-кнопку */
+    .burger-menu {
+        display: flex;
+    }
+    
+    /* Скрываем обычное меню */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        width: 280px;
+        height: 100vh;
+        padding: 80px 30px 30px;
+        transition: right 0.3s ease;
+        display: flex !important;
+        z-index: 1000;
+        gap: 0;
+    }
+    
+    /* Показываем меню когда активно */
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        margin: 15px 0;
+        font-size: 18px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a:hover {
+        color: khaki;
+        transform: translateX(10px);
+    }
+
 }
 
 /* Плавные переходы для всех интерактивных элементов */

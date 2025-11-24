@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="wwwroot/css/style.css"/>
+    <script src="wwwroot/js/masters-carousel.js"></script>
     <script src="wwwroot/js/scripts.js" defer></script>
     <script src="wwwroot/js/burger-menu.js"></script>
+
     <title>Illusion</title>
 </head>
 <body>
@@ -139,22 +141,6 @@
             </div>
         </section>
 
- <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ваш сайт</title>
-    
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Подключение JavaScript галереи -->
-    <script src="js/gallery.js" defer></script>
-</head>
-<body>
-
-    <!-- Вставьте этот блок в нужное место -->
     <section class="gallery-section">
         <h2 class="section-title">ГАЛЕРЕЯ</h2>
         <div class="gallery-container">
@@ -221,118 +207,168 @@
         </div>
     </section>
 
-</body>
-</html>
+<!-- СЕКЦИЯ МАСТЕРОВ - НОВАЯ ВЕРСИЯ -->
+<!-- СЕКЦИЯ МАСТЕРОВ - ЧИСТЫЙ СКРОЛЛ -->
+<!-- СЕКЦИЯ МАСТЕРОВ - СЕТКА + КНОПКА -->
+<section class="masters-section">
+    <h2 class="masters-title">МАСТЕРА САЛОНА</h2>
+    
+    <div class="masters-carousel">
+        <div class="carousel-container" id="mastersContainer">
+            <div class="carousel-track" id="mastersTrack">
+                <!-- Первые 6 карточек (видимые изначально) -->
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Анна">
+                    </div>
+                    <div class="master-info">
+                        <h3>Анна</h3>
+                        <p class="master-age">25 лет</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 3 размер</p>
+                            <p><span>Рост:</span> 170 см</p>
+                            <p><span>Вес:</span> 55 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Мария">
+                    </div>
+                    <div class="master-info">
+                        <h3>Мария</h3>
+                        <p class="master-age">23 года</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 2 размер</p>
+                            <p><span>Рост:</span> 165 см</p>
+                            <p><span>Вес:</span> 52 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Елена">
+                    </div>
+                    <div class="master-info">
+                        <h3>Елена</h3>
+                        <p class="master-age">27 лет</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 4 размер</p>
+                            <p><span>Рост:</span> 175 см</p>
+                            <p><span>Вес:</span> 60 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Ольга">
+                    </div>
+                    <div class="master-info">
+                        <h3>Ольга</h3>
+                        <p class="master-age">24 года</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 3 размер</p>
+                            <p><span>Рост:</span> 168 см</p>
+                            <p><span>Вес:</span> 58 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Ирина">
+                    </div>
+                    <div class="master-info">
+                        <h3>Ирина</h3>
+                        <p class="master-age">26 лет</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 2 размер</p>
+                            <p><span>Рост:</span> 172 см</p>
+                            <p><span>Вес:</span> 56 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Светлана">
+                    </div>
+                    <div class="master-info">
+                        <h3>Светлана</h3>
+                        <p class="master-age">22 года</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 3 размер</p>
+                            <p><span>Рост:</span> 169 см</p>
+                            <p><span>Вес:</span> 57 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
+                </div>
 
-        <section class="section-master">
-            <h1 class="flex-horizontal">МАСТЕРА САЛОНА</h1>
-    <div class="masters-board">
-        <!-- Карточка 1 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Анна</h1><p>25 лет</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 3 размер</p>
-                    <p>Рост: 170 см</p>
-                    <p>Вес: 55 кг</p>
+                <!-- ДОПОЛНИТЕЛЬНЫЕ КАРТОЧКИ (скрытые изначально) -->
+                <div class="master-card hidden">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Виктория">
+                    </div>
+                    <div class="master-info">
+                        <h3>Виктория</h3>
+                        <p class="master-age">28 лет</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 3 размер</p>
+                            <p><span>Рост:</span> 171 см</p>
+                            <p><span>Вес:</span> 59 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
                 </div>
-                <div>
-                    <a class="btn">Подробнее</a>
+                
+                <div class="master-card hidden">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Дарья">
+                    </div>
+                    <div class="master-info">
+                        <h3>Дарья</h3>
+                        <p class="master-age">24 года</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 2 размер</p>
+                            <p><span>Рост:</span> 166 см</p>
+                            <p><span>Вес:</span> 54 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Карточка 2 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Мария</h1><p>23 года</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 2 размер</p>
-                    <p>Рост: 165 см</p>
-                    <p>Вес: 52 кг</p>
-                </div>
-                <div>
-                    <a class="btn">Подробнее</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Карточка 3 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Елена</h1><p>27 лет</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 4 размер</p>
-                    <p>Рост: 175 см</p>
-                    <p>Вес: 60 кг</p>
-                </div>
-                <div>
-                    <a class="btn">Подробнее</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Карточка 4 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Ольга</h1><p>24 года</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 3 размер</p>
-                    <p>Рост: 168 см</p>
-                    <p>Вес: 58 кг</p>
-                </div>
-                <div>
-                    <a class="btn">Подробнее</a>
+                
+                <div class="master-card hidden">
+                    <div class="master-photo">
+                        <img src="wwwroot/img/Masters/Master.jpg" alt="Юлия">
+                    </div>
+                    <div class="master-info">
+                        <h3>Юлия</h3>
+                        <p class="master-age">26 лет</p>
+                        <div class="master-params">
+                            <p><span>Грудь:</span> 4 размер</p>
+                            <p><span>Рост:</span> 174 см</p>
+                            <p><span>Вес:</span> 61 кг</p>
+                        </div>
+                        <button class="master-btn">Подробнее</button>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Карточка 5 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Ирина</h1><p>26 лет</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 2 размер</p>
-                    <p>Рост: 172 см</p>
-                    <p>Вес: 56 кг</p>
-                </div>
-                <div>
-                    <a class="btn">Подробнее</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Карточка 6 -->
-        <div class="item">
-            <img id="pre-img" src="wwwroot/img/Masters/Master.jpg">
-            <div><h1>Светлана</h1><p>22 года</p></div>
-            <div>
-                <div>
-                    <p>Грудь: 3 размер</p>
-                    <p>Рост: 169 см</p>
-                    <p>Вес: 57 кг</p>
-                </div>
-                <div>
-                    <a class="btn">Подробнее</a>
-                </div>
-            </div>
+        <!-- Кнопка ПОКАЗАТЬ ЕЩЕ -->
+        <div class="show-more-container">
+            <button class="show-more-btn" id="showMoreBtn">ПОКАЗАТЬ ЕЩЕ</button>
         </div>
     </div>
-    <div class="flex-vertical Mr40">
-        <a href="#" class="btn flex-vertical">ЕЩЕ</a>
-        </div>
-
-
-    <div class="Wheel">
-
-    </div>
-
-
 </section>
 
 
@@ -389,5 +425,7 @@
         </div>
     
 </footer>
+<script src="wwwroot/js/masters-grid.js"></script>
+<script src="wwwroot/js/masters-simple.js"></script>
 </body>
 </html>

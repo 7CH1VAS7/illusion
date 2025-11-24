@@ -1319,7 +1319,8 @@ html, body {
 
 /* ===== НОВАЯ СЕКЦИЯ МАСТЕРОВ ===== */
 .masters-section {
-    background: #000;
+    background-image: url('../img/Fon.png');
+    
     padding: 60px 20px;
     position: relative;
 }
@@ -1570,3 +1571,10 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
+
+
+
+
+
+809

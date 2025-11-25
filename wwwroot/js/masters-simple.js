@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎴 Карусель готова - используйте перетаскивание для скролла');
     
+    // Отключаем ховер-эффекты на мобильных
+    const isMobile = window.innerWidth <= 1024;
+    if (isMobile) {
+        document.body.classList.add('mobile-device');
+    }
+    
     // Drag & Drop функциональность
     let isDragging = false;
     let startX;
@@ -45,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         container.style.scrollBehavior = 'auto';
         container.style.userSelect = 'none';
         
+        // Предотвращаем выделение карточек
+        document.body.style.userSelect = 'none';
+        
         // Сбрасываем анимацию
         cancelAnimationFrame(animationFrame);
         velocity = 0;
@@ -57,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         e.preventDefault();
         const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        const walk = (clientX - startX) * 1.5; // Уменьшил множитель для плавности
+        const walk = (clientX - startX) * 1.5;
         container.scrollLeft = scrollLeft - walk;
         
         // Рассчитываем скорость для инерции
@@ -76,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isDragging = false;
         container.style.cursor = 'grab';
         container.style.userSelect = 'auto';
+        document.body.style.userSelect = 'auto'; // Восстанавливаем выделение
         
         // Добавляем инерцию
         if (Math.abs(velocity) > 0.1) {
@@ -89,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyInertia() {
-        const friction = 0.92; // Коэффициент трения
+        const friction = 0.92;
         const minVelocity = 0.1;
         
         function animate() {
@@ -112,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.addEventListener('mouseup', endDrag);
     container.addEventListener('mouseleave', endDrag);
 
-    // События для тач-устройств (улучшенные)
+    // События для тач-устройств
     container.addEventListener('touchstart', startDrag, { passive: false });
     container.addEventListener('touchmove', duringDrag, { passive: false });
     container.addEventListener('touchend', endDrag, { passive: false });
@@ -128,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Улучшаем производительность
     container.style.willChange = 'scroll-position';
     container.style.backfaceVisibility = 'hidden';
-    container.style.transform = 'translateZ(0)';
 
     // Устанавливаем курсор grab после загрузки
     container.style.cursor = 'grab';

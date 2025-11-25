@@ -611,6 +611,13 @@ footer {
         font-size: 48px;
         margin-top: 150px;
     }
+    .master-card.hidden {
+        display: block !important;
+    }
+    
+    .carousel-container.expanded {
+        display: flex !important;
+    }
 }
 
 @media (max-width: 768px) {

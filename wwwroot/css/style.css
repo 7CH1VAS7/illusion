@@ -64,10 +64,17 @@ a:hover{
     display: flex;
     flex-direction: column;
 }
-
+.burger-head{
+    display: none;
+}
 .messenger-group{
+    display: flex;
+    align-items: center;
     margin-left: 10px;
     margin-right: 10px;
+}
+.messenger-group a{
+    margin-left: 10px;
 }
 .contacts{
     margin-right: 10px;
@@ -475,7 +482,7 @@ footer {
 .nav-links a:hover {
     color: khaki;
 }
-@media (max-width: 1410px){
+@media (max-width: 1429px){
     .messenger-group{
         display: none;
     }
@@ -494,7 +501,17 @@ footer {
         padding-left: 10px;
         padding-right: 10px;
     }
-    
+    .burger-head{
+    display: flex;
+    }
+    .burger-head .messenger-group div a {
+        border-bottom-width: 0px;
+        margin-right: 5px;
+        width: auto;
+    }
+    .burger-head .messenger-group div{
+        margin-right: 15px;
+    }
     .burger-menu {
         display: flex;
         flex-direction: column;

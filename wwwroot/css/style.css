@@ -621,6 +621,8 @@ footer {
     overscroll-behavior-x: contain;
     /* Убираем возможные точки фиксации */
     scroll-snap-type: none !important;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
 }
 }
 
@@ -846,9 +848,17 @@ footer {
 @media (max-width: 1024px) {
     .master-card {
         flex: 0 0 300px;
-        scroll-snap-align: none !important;
+        
+    }  
+    .master-card:active,
+    .master-card:focus,
+    .master-card:hover,
+    .master-card.touch-active {
+        transform: none !important;
+        box-shadow: none !important; 
     }
 }
+
 
 .master-card:hover {
     transform: translateY(-5px);

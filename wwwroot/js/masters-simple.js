@@ -27,15 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎴 Карусель готова - используйте перетаскивание для скролла');
     
-    // Отключаем ховер-эффекты на мобильных
+    // Добавляем класс для мобильных устройств
     const isMobile = window.innerWidth <= 1024;
     if (isMobile) {
-        document.body.classList.add('mobile-device');
+        document.body.classList.add('is-mobile');
+        // Принудительно отключаем все transition для карточек
+        const cards = document.querySelectorAll('.master-card');
+        cards.forEach(card => {
+            card.style.transition = 'none';
+            card.style.webkitTransition = 'none';
+        });
     }
     
     // Drag & Drop функциональность
     let isDragging = false;
-    let startX;
+    let isHorizontalScroll = false;
+    let startX, startY;
     let scrollLeft;
     let velocity = 0;
     let lastX;
@@ -45,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function startDrag(e) {
         isDragging = true;
         const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        
         startX = clientX;
+        startY = clientY;
         scrollLeft = container.scrollLeft;
         container.style.cursor = 'grabbing';
         container.style.scrollBehavior = 'auto';
@@ -54,28 +64,61 @@ document.addEventListener('DOMContentLoaded', function() {
         // Предотвращаем выделение карточек
         document.body.style.userSelect = 'none';
         
+        // На мобильных отключаем все активные состояния
+        if (isMobile) {
+            document.body.style.webkitTapHighlightColor = 'transparent';
+            document.body.style.webkitTouchCallout = 'none';
+        }
+        
         // Сбрасываем анимацию
         cancelAnimationFrame(animationFrame);
         velocity = 0;
         lastX = clientX;
         lastTime = performance.now();
+        
+        // Пока не знаем направление скролла
+        isHorizontalScroll = false;
     }
 
     function duringDrag(e) {
         if (!isDragging) return;
         
-        e.preventDefault();
         const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        const walk = (clientX - startX) * 1.5;
-        container.scrollLeft = scrollLeft - walk;
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
         
-        // Рассчитываем скорость для инерции
-        const currentTime = performance.now();
-        const deltaTime = currentTime - lastTime;
-        if (deltaTime > 0) {
-            velocity = (lastX - clientX) / deltaTime;
-            lastX = clientX;
-            lastTime = currentTime;
+        // Определяем направление скролла (только при первом движении)
+        if (!isHorizontalScroll && !isVerticalScrollDetermined) {
+            const deltaX = Math.abs(clientX - startX);
+            const deltaY = Math.abs(clientY - startY);
+            
+            // Если движение больше по горизонтали - это горизонтальный скролл
+            if (deltaX > deltaY && deltaX > 5) {
+                isHorizontalScroll = true;
+                e.preventDefault();
+            } else if (deltaY > deltaX && deltaY > 5) {
+                // Вертикальный скролл - отпускаем
+                isDragging = false;
+                container.style.cursor = 'grab';
+                container.style.userSelect = 'auto';
+                document.body.style.userSelect = 'auto';
+                return;
+            }
+        }
+        
+        // Если это горизонтальный скролл - обрабатываем
+        if (isHorizontalScroll) {
+            e.preventDefault();
+            const walk = (clientX - startX) * 1.5;
+            container.scrollLeft = scrollLeft - walk;
+            
+            // Рассчитываем скорость для инерции
+            const currentTime = performance.now();
+            const deltaTime = currentTime - lastTime;
+            if (deltaTime > 0) {
+                velocity = (lastX - clientX) / deltaTime;
+                lastX = clientX;
+                lastTime = currentTime;
+            }
         }
     }
 
@@ -85,10 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
         isDragging = false;
         container.style.cursor = 'grab';
         container.style.userSelect = 'auto';
-        document.body.style.userSelect = 'auto'; // Восстанавливаем выделение
+        document.body.style.userSelect = 'auto';
         
-        // Добавляем инерцию
-        if (Math.abs(velocity) > 0.1) {
+        // Восстанавливаем стандартные настройки для мобильных
+        if (isMobile) {
+            document.body.style.webkitTapHighlightColor = '';
+            document.body.style.webkitTouchCallout = '';
+        }
+        
+        // Добавляем инерцию только для горизонтального скролла
+        if (isHorizontalScroll && Math.abs(velocity) > 0.1) {
             applyInertia();
         }
         
@@ -96,6 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             container.style.scrollBehavior = 'smooth';
         }, 100);
+        
+        isHorizontalScroll = false;
+        isVerticalScrollDetermined = false;
     }
 
     function applyInertia() {
@@ -116,6 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
         animate();
     }
 
+    // Переменная для отслеживания определения направления
+    let isVerticalScrollDetermined = false;
+
     // События для мыши
     container.addEventListener('mousedown', startDrag);
     container.addEventListener('mousemove', duringDrag);
@@ -123,17 +178,10 @@ document.addEventListener('DOMContentLoaded', function() {
     container.addEventListener('mouseleave', endDrag);
 
     // События для тач-устройств
-    container.addEventListener('touchstart', startDrag, { passive: false });
+    container.addEventListener('touchstart', startDrag, { passive: true });
     container.addEventListener('touchmove', duringDrag, { passive: false });
-    container.addEventListener('touchend', endDrag, { passive: false });
-    container.addEventListener('touchcancel', endDrag, { passive: false });
-
-    // Предотвращаем вертикальный скролл при горизонтальном перетаскивании
-    container.addEventListener('touchmove', function(e) {
-        if (isDragging) {
-            e.preventDefault();
-        }
-    }, { passive: false });
+    container.addEventListener('touchend', endDrag, { passive: true });
+    container.addEventListener('touchcancel', endDrag, { passive: true });
 
     // Улучшаем производительность
     container.style.willChange = 'scroll-position';

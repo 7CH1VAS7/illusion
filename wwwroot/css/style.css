@@ -614,9 +614,14 @@ footer {
     .master-card.hidden {
         display: block !important;
     }
-    .carousel-container.expanded {
-        display: flex !important;
-    }
+    .carousel-container {
+    /* Улучшаем производительность скролла */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    /* Убираем возможные точки фиксации */
+    scroll-snap-type: none !important;
+}
 }
 
 @media (max-width: 768px) {
@@ -794,6 +799,19 @@ footer {
         gap: 20px;
     }
     
+    .master-card:hover {
+        /* На мобильных устройствах ховер не должен работать */
+        transform: none;
+        box-shadow: none;
+    }
+    .master-card {
+        transition: none !important;
+    }
+    
+    .master-card * {
+        transition: none !important;
+    }
+
     .carousel-container::-webkit-scrollbar {
         display: none;
     }
@@ -805,9 +823,9 @@ footer {
 
 @media (max-width: 1024px) {
     .carousel-track {
-        display: flex;
-        gap: 20px;
-        padding: 0 10px;
+        /* Улучшаем рендеринг */
+        will-change: transform;
+        backface-visibility: hidden;
         user-select: none;
     }
 }
@@ -828,6 +846,7 @@ footer {
 @media (max-width: 1024px) {
     .master-card {
         flex: 0 0 300px;
+        scroll-snap-align: none !important;
     }
 }
 

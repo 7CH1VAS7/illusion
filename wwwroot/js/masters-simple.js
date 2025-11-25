@@ -27,59 +27,112 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎴 Карусель готова - используйте перетаскивание для скролла');
     
-    // Drag & Drop функциональность для десктопа
+    // Drag & Drop функциональность
     let isDragging = false;
     let startX;
     let scrollLeft;
-    
+    let velocity = 0;
+    let lastX;
+    let animationFrame;
+    let lastTime = 0;
+
     function startDrag(e) {
         isDragging = true;
-        startX = e.pageX - container.offsetLeft;
+        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        startX = clientX;
         scrollLeft = container.scrollLeft;
         container.style.cursor = 'grabbing';
-        container.style.scrollBehavior = 'auto'; // Отключаем плавность при перетаскивании
+        container.style.scrollBehavior = 'auto';
+        container.style.userSelect = 'none';
+        
+        // Сбрасываем анимацию
+        cancelAnimationFrame(animationFrame);
+        velocity = 0;
+        lastX = clientX;
+        lastTime = performance.now();
     }
-    
+
     function duringDrag(e) {
         if (!isDragging) return;
         
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 2; // Умножаем для более быстрого скролла
+        e.preventDefault();
+        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const walk = (clientX - startX) * 1.5; // Уменьшил множитель для плавности
         container.scrollLeft = scrollLeft - walk;
+        
+        // Рассчитываем скорость для инерции
+        const currentTime = performance.now();
+        const deltaTime = currentTime - lastTime;
+        if (deltaTime > 0) {
+            velocity = (lastX - clientX) / deltaTime;
+            lastX = clientX;
+            lastTime = currentTime;
+        }
     }
-    
+
     function endDrag() {
+        if (!isDragging) return;
+        
         isDragging = false;
         container.style.cursor = 'grab';
-        container.style.scrollBehavior = 'smooth'; // Включаем плавность обратно
+        container.style.userSelect = 'auto';
+        
+        // Добавляем инерцию
+        if (Math.abs(velocity) > 0.1) {
+            applyInertia();
+        }
+        
+        // Включаем плавность через небольшой таймаут
+        setTimeout(() => {
+            container.style.scrollBehavior = 'smooth';
+        }, 100);
     }
-    
+
+    function applyInertia() {
+        const friction = 0.92; // Коэффициент трения
+        const minVelocity = 0.1;
+        
+        function animate() {
+            if (Math.abs(velocity) < minVelocity || isDragging) {
+                return;
+            }
+            
+            container.scrollLeft += velocity * 20;
+            velocity *= friction;
+            
+            animationFrame = requestAnimationFrame(animate);
+        }
+        
+        animate();
+    }
+
     // События для мыши
     container.addEventListener('mousedown', startDrag);
     container.addEventListener('mousemove', duringDrag);
     container.addEventListener('mouseup', endDrag);
     container.addEventListener('mouseleave', endDrag);
-    
-    // События для тач-устройств
-    container.addEventListener('touchstart', (e) => {
-        startDrag({
-            pageX: e.touches[0].pageX,
-            offsetLeft: container.offsetLeft
-        });
-    });
-    
-    container.addEventListener('touchmove', (e) => {
-        duringDrag({
-            pageX: e.touches[0].pageX,
-            offsetLeft: container.offsetLeft
-        });
-    });
-    
-    container.addEventListener('touchend', endDrag);
-    
+
+    // События для тач-устройств (улучшенные)
+    container.addEventListener('touchstart', startDrag, { passive: false });
+    container.addEventListener('touchmove', duringDrag, { passive: false });
+    container.addEventListener('touchend', endDrag, { passive: false });
+    container.addEventListener('touchcancel', endDrag, { passive: false });
+
+    // Предотвращаем вертикальный скролл при горизонтальном перетаскивании
+    container.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Улучшаем производительность
+    container.style.willChange = 'scroll-position';
+    container.style.backfaceVisibility = 'hidden';
+    container.style.transform = 'translateZ(0)';
+
     // Устанавливаем курсор grab после загрузки
     container.style.cursor = 'grab';
-    
+
     console.log('✅ Карусель со свободным скроллом готова к работе!');
     console.log('🎮 Управление: перетаскивание мышью / свайп пальцем');
 });

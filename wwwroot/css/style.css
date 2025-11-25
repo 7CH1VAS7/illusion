@@ -614,7 +614,6 @@ footer {
     .master-card.hidden {
         display: block !important;
     }
-    
     .carousel-container.expanded {
         display: flex !important;
     }
@@ -944,6 +943,35 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+
+
+.footer2 input[type="number"] {
+    /* Убираем скроллбар и стрелочки */
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    margin: 0;
+}
+
+.footer2 input[type="number"]::-webkit-outer-spin-button,
+.footer2 input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Или более конкретно для вашего инпута */
+.form-input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 

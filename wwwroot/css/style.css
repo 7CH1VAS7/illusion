@@ -186,7 +186,7 @@ a:hover{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .item {
@@ -244,7 +244,7 @@ a:hover{
 }
 
 .text-boxsize_mr{
-    margin: clamp(2px, 4vw, 50px) !important;
+    margin-left: clamp(2px, 4vw, 50px) !important;
 }
 
 
@@ -475,7 +475,7 @@ footer {
 .nav-links a:hover {
     color: khaki;
 }
-@media (max-width: 1390px){
+@media (max-width: 1410px){
     .messenger-group{
         display: none;
     }
@@ -902,6 +902,12 @@ footer {
 
 @media (max-width: 1024px) {
     .show-more-container {
+        display: none;
+    }
+}
+
+@media (min-width: 1190px) {
+    .burger-contacts{
         display: none;
     }
 }

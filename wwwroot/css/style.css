@@ -3,9 +3,9 @@
     src: url('../font-15/TrajanPro3Regular.woff2') format('woff2'),
          url('../font-15/TrajanPro3Regular.woff') format('woff'),
          url('../font-15/TrajanPro3Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 100;
     font-style: normal;
-    font-display: swap; /* Для лучшей производительности */
+    font-display: swap;
 }
 @font-face {
     font-family: 'GothamPro';
@@ -17,12 +17,11 @@
     font-display: swap;
 }
 
-
 .header_sky-const{
     display: flex;
-    margin-top: 5px;
-    margin-left: 200px;
-    margin-right: 200px;
+    padding-top: 5px;
+    padding-left: 10%;
+    padding-right: 10%;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -41,11 +40,9 @@ body{
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'TrajanPro3Regular', TrajanPro3Regular ;
-    font-weight: lighter;
-font-weight: 100;
-font-weight: 200;
-font-weight: 300;
-
+    
+    font-weight: 100;
+    
 }
 a{
     color: aliceblue;
@@ -61,7 +58,6 @@ a:hover{
 
 .nav-bar a{
     font-size: 12px;
-    margin-left: 10px;
     font-family: 'TrajanPro3Regular', TrajanPro3Regular ;
 }
 .contacts{
@@ -79,26 +75,25 @@ a:hover{
 
 
 .btn{
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular ;
     display: inline-block;
     padding: 12px 24px;
     text-decoration: none;
-    color: khaki; /* Цвет текста */
-    border: 2px solid khaki; /* Обводка */
-    background-color: transparent; /* Прозрачный фон */
-    border-radius: 8px; /* Закругление углов */
+    color: khaki;
+    border: 2px solid khaki;
+    background-color: transparent;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 .header-vid{
     position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-            object-fit: cover;
-            
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
 }
-
 
 .flex-vertical{
     display: flex;
@@ -115,7 +110,6 @@ a:hover{
     align-items: center;
 }
 
-
 .content-vid{
     margin-top: 120px;
     height: 400px;
@@ -127,7 +121,6 @@ a:hover{
 .text-boxsize h3{
     margin: 0px;
 }
-
 
 .section-master {
     background-image: url('../img/Fon.png');
@@ -149,9 +142,6 @@ a:hover{
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
-/* Фото 3×4 */
-
-
 .params {
     text-align: left;
     margin-bottom: 25px;
@@ -167,23 +157,13 @@ a:hover{
     color: #FFD700;
 }
 
-
-
-
-
-
-
-
-
-
 .section-for{
     background-image: url('../img/Fon.png');
     background-color: black;
     background-repeat: repeat;
-    padding-top: 40px;
+    padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
-    height: 120vh;
     background-repeat: repeat;
 }
 
@@ -209,7 +189,6 @@ a:hover{
     margin-bottom: 30px;
 }
 
-
 .item {
     display: flex;
     flex-direction: column;
@@ -222,8 +201,6 @@ a:hover{
     padding: 25px;
 }
 
-
-/* Иконки */
 .item img {
     width: 60px;
     height: 60px;
@@ -233,7 +210,7 @@ a:hover{
 
 .item h4 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 100;
     margin-bottom: 10px;
     color: aliceblue;
 }
@@ -245,7 +222,6 @@ a:hover{
     text-align: center;
 }
 
-/* Адаптивность */
 @media (max-width: 1024px) {
     .group {
         grid-template-columns: repeat(2, 1fr);
@@ -258,37 +234,25 @@ a:hover{
     }
 }
 
-
 .section-tour{
     background-image: url('../img/Fon2.png');
     background-color: black;
-
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     background-repeat: repeat;
 }
 
+.text-boxsize_mr{
+    margin: clamp(2px, 4vw, 50px) !important;
+}
+
+
 .Mr40{
     margin: 40px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ГАЛЕРЕЯ */
 .gallery-section {
     background-color: #000;
     padding: 60px 20px;
@@ -327,20 +291,6 @@ a:hover{
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
-}
-
-/* Заглушка для отсутствующих изображений */
-.gallery-slide .image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #333, #555);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px;
-    border-radius: 10px;
-    border: 2px dashed #666;
 }
 
 .gallery-btn {
@@ -393,7 +343,6 @@ a:hover{
     background: #FFD700;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .gallery-slide {
         height: 300px;
@@ -418,89 +367,18 @@ a:hover{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .fs-40{
     font-size:60px ;
 }
 
-
-.HaW10{
-height: auto;
-width: 10px;
-}
-.HaW20{
-height: auto;
-width: 20px;
-}
-.HaW30{
-height: auto;
-width: 30px;
-}
-#HaW40{
-height: auto;
-width: 40px;
-}
-.HaW50{
-height: auto;
-width: 50px;
-}
-.HaW60{
-height: auto;
-width: 60px;
-}
-.HaW70{
-height: auto;
-width: 70px;
-}
-.HaW80{
-height: auto;
-width: 80px;
-}
-.HaW90{
-height: auto;
-width: 90px;
-}
-.HaW100{
-height: auto;
-width: 100px;
-}
 .HaW150{
-height: auto;
-width: 150px;
+    height: auto;
+    width: 150px;
 }
 .HaW500{
-height: auto;
-width: 500px;
+    height: auto;
+    width: 500px;
 }
-
-
 
 #pre-img{
     height: 300px;
@@ -508,22 +386,10 @@ width: 500px;
 }
 
 .section-for {
-    background-color: #000; /* Черный фон секции */
+    background-color: #000;
     padding: 40px 20px;
     color: white;
 }
-
-
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-    
-}
-
-@media (max-width: 768px) {
-    
-}
-
 
 footer {
     width: 100%;
@@ -534,14 +400,13 @@ footer {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)),
         url('../img/footerIMG.png') center/cover no-repeat;
-    min-height: 100vh; /* Минимальная высота на весь экран */
+    min-height: 100vh;
     padding: 0px;
     color: #999;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Остальные ваши стили остаются без изменений */
 .footer2 input {
     width: 700px;
     height: 20px;
@@ -552,7 +417,7 @@ footer {
     border-bottom: 1px solid #FFD700;
     border-radius: 5px;
     color: khaki;
-    font-family: 'rajanPro3Regular', rajanPro3Regular;
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular;
     font-size: 20px;
     margin-bottom: 50px;
 }
@@ -563,64 +428,18 @@ footer {
     margin-top: 200px;
 }
 
-/* ... остальные ваши стили ... */
-
-/* Стили для плейсхолдера */
 .footer2 input::placeholder {
-    color: #999; /* Цвет текста плейсхолдера */
-    font-family: 'rajanPro3Regular', rajanPro3Regular ; /* Ваш шрифт */
-    font-size: 20px;
-    font-weight: 300; /* Тонкость шрифта */
-    opacity: 1; /* Убедитесь что виден */
-}
-
-/* Для разных браузеров */
-.footer2 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #999;
-    font-family: 'rajanPro3Regular', rajanPro3Regular ;
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular;
     font-size: 20px;
-    font-weight: 300;
-}
-
-.footer2 input::-moz-placeholder { /* Firefox 19+ */
-    color: #999;
-    font-family: 'rajanPro3Regular', rajanPro3Regular ;
-    font-size: 20px;
-    font-weight: 300;
+    font-weight: 100;
     opacity: 1;
 }
 
-.footer2 input:-ms-input-placeholder { /* IE 10+ */
-    color: #999;
-    font-family: 'rajanPro3Regular', rajanPro3Regular ;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.footer2 input:-moz-placeholder { /* Firefox 18- */
-    color: #999;
-    font-family: 'rajanPro3Regular', rajanPro3Regular ;
-    font-size: 20px;
-    font-weight: 300;
-}
-
 .footer2 input[type="number"] {
-    /* Убираем скроллбар */
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
-}
-
-/* Для WebKit браузеров (Chrome, Safari, Edge) */
-.footer2 input[type="number"]::-webkit-outer-spin-button,
-.footer2 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Для Firefox */
-.footer2 input[type="number"] {
-    -moz-appearance: textfield;
 }
 
 .fmb{
@@ -636,6 +455,10 @@ footer {
     display: inline-block;
 }
 
+.burger-menu {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     gap: 20px;
@@ -643,7 +466,6 @@ footer {
 
 .nav-links a {
     font-size: 12px;
-    margin-left: 10px;
     font-family: 'TrajanPro3Regular', TrajanPro3Regular;
     text-decoration: none;
     color: aliceblue;
@@ -653,594 +475,56 @@ footer {
 .nav-links a:hover {
     color: khaki;
 }
-
-/* Бургер-кнопка (скрыта на десктопе) */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
+@media (max-width: 1390px){
+    .messenger-group{
+        display: none;
+    }
+    .contacts{
+        display: none;
+    }
+    footer .burger-menu{
+        display: none;
+    }
+    
 }
 
-.burger-menu span {
-    width: 25px;
-    height: 3px;
-    background: aliceblue;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-/* Анимация бургера при клике */
-.burger-menu.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Оверлей для затемнения фона */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-}
-
-.menu-overlay.active {
-    display: block;
-}
-
-/* Контейнер для фото 3×4 */
-
-
-/* Кнопки навигации */
-.swiper-button-prev,
-.swiper-button-next {
-    color: #FFD700 !important;
-    background: rgba(0, 0, 0, 0.7);
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 50%;
-    margin-top: -25px !important;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    font-size: 20px !important;
-    font-weight: bold;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background: rgba(255, 215, 0, 0.2);
-}
-
-/* Пагинация (точки) */
-.swiper-pagination-bullet {
-    background: #555 !important;
-    opacity: 1 !important;
-    width: 12px !important;
-    height: 12px !important;
-}
-
-.swiper-pagination-bullet-active {
-    background: #FFD700 !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== АДАПТИВНАЯ ВЕРСТКА ===== */
-
-/* Планшеты (1024px и меньше) */
-@media (max-width: 1024px) {
+@media (max-width: 1190px) {
     .header_sky-const {
-        margin-left: 100px;
-        margin-right: 100px;
-        flex-wrap: wrap;
-        gap: 20px;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .nav-bar {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 15px;
-    }
-    .nav-bar a {
-        margin: 0 8px;
-        font-size: 11px;
-    }
-    .content-vid {
-        margin-top: 80px;
-    }
-    .HaW500 {
-        width: 400px;
-    }
-    .fs-40 {
-        font-size: 48px;
-    }
-    .text-boxsize {
+    
+    .burger-menu {
         display: flex;
-        flex-wrap: nowrap; /* Запрещаем перенос */
-        align-items: center;
-        white-space: nowrap; /* Запрещаем разрыв строк */
-    }
-    .text-boxsize h3 {
-        white-space: nowrap; /* Каждый h3 в одной строке */
-        margin-left: 0 !important;
-    }
-    .section-for {
-        height: auto;
-        padding-bottom: 40px;
-    }
-    .group {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .footer2 input {
-        width: 500px;
-    }
-    .footer2 h1 {
-        font-size: 48px;
-        margin-top: 150px;
-    }
-    
-}
-
-/* Планшеты (768px и меньше) */
-@media (max-width: 768px) {
-    /* Хедер */
-    .header_sky-const {
-        margin-left: 50px;
-        margin-right: 50px;
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .nav-bar {
-        order: 0;
-        width: auto;
-        margin-top: 0;
-    }
-    
-    .nav-bar a {
-        margin: 0 5px;
-        font-size: 10px;
-    }
-    
-    .contacts {
-        margin-right: 0;
-    }
-    
-    /* Главный контент */
-    .content-vid {
-        margin-top: 60px;
-    }
-    
-    .HaW500 {
-        width: 300px;
-    }
-    
-    .fs-40 {
-        font-size: 36px;
-    }
-    
-    /* Исправление для текста "GENTELMEN" */
-    .text-boxsize {
-        height: auto;
-        flex-wrap: nowrap; /* Все еще запрещаем перенос */
-        justify-content: center;
-        gap: 5px; /* Уменьшаем gap */
-    }
-    
-    .text-boxsize h3 {
-        margin-left: 0 !important;
-        white-space: nowrap;
-        letter-spacing: -0.5px; /* Убираем лишний пробел между буквами */
-    }
-    
-    /* Секции */
-    .section-for h2 {
-        font-size: 36px;
-        margin-top: 60px;
-    }
-    
-    .group {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .item {
-        padding: 20px;
-    }
-    
-    /* Галерея */
-    .gallery-slide {
-        height: 300px;
-    }
-    
-    .gallery-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
-    
-    
-    /* Мастера */
-    
-    
-    #pre-img {
-        width: 250px;
-        height: 250px;
-    }
-    
-    /* Футер */
-    .footer2 {
-        min-height: auto;
-        padding: 50px 20px 20px;
-    }
-    
-    .footer2 h1 {
-        font-size: 36px;
-        margin-top: 50px;
-        margin-bottom: 40px;
-    }
-    
-    .footer2 input {
-        width: 90%;
-        max-width: 400px;
-        font-size: 18px;
-    }
-    
-    .footer2 .header_sky-const {
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-        gap: 20px;
-    }
-    
-    .fmb {
-        margin-top: 50px;
-    }
-
-    
-    
-    .section-title {
-        font-size: 36px;
-    }
-
-}
-
-/* Мобильные (600px и меньше) - ПЕРВОЕ ПЕРЕНЕСЕНИЕ */
-@media (max-width: 600px) {
-    .text-boxsize {
-        flex-wrap: wrap; /* Разрешаем перенос */
-        justify-content: center;
-        gap: 0; /* Убираем gap между элементами */
-    }
-    
-    .text-boxsize h3 {
-        white-space: nowrap;
-        margin: 0 2px !important; /* Минимальные отступы */
-    }
-    
-    /* Группируем "GENTEL" и "MEN" вместе */
-    .text-boxsize h3:nth-child(4),
-    .text-boxsize h3:nth-child(5) {
-        display: inline-block; /* Чтобы "MEN" не переносилось отдельно */
-    }
-}
-
-/* Мобильные (480px и меньше) */
-@media (max-width: 480px) {
-    /* Хедер */
-    .header_sky-const {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .nav-links {
-        width: 100%;
-        padding: 100px 20px 30px;
-    }
-    
-    .nav-links a {
-        font-size: 16px;
-        padding: 15px 0;
-    }
-    
-    .nav-bar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .nav-bar a {
-        font-size: 9px;
-        margin: 0 3px;
-    }
-    
-    .HaW150 {
-        width: 120px;
-    }
-    
-    /* Главный контент */
-    .content-vid {
-        margin-top: 40px;
-    }
-    
-    .HaW500 {
-        width: 250px;
-    }
-    
-    .fs-40 {
-        font-size: 28px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    /* Исправление для текста "GENTELMEN" */
-    .text-boxsize {
-         /* Вертикальное расположение */
-        gap: 0;
-    }
-    
-    .text-boxsize h3 {
-        margin: 0 !important;
-        line-height: 1; /* Убираем межстрочный интервал */
-    }
-    
-    /* Группируем "GENTELMEN" как одно слово */
-    .gentelmen-group {
-        display: flex;
-        white-space: nowrap;
-    }
-    
-    /* Секции */
-    .section-for,
-    .section-master,
-    .section-tour {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    .section-for h2 {
-        font-size: 28px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-    
-    .item {
-        padding: 15px;
-    }
-    
-    .item h4 {
-        font-size: 16px;
-    }
-    
-    .item p {
-        font-size: 13px;
-    }
-    
-    /* Галерея */
-    .gallery-section {
-        padding: 40px 15px;
-    }
-    
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .gallery-slide {
-        height: 250px;
-    }
-    
-    #pre-img {
-        width: 200px;
-        height: 200px;
-    }
-    
-.flex-horizontal-contact{
-        margin-top: 2px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-
-
-    /* Футер */
-    .footer2 h1 {
-        font-size: 28px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .footer2 input {
-        width: 95%;
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-    
-    .footer2 input::placeholder {
-        font-size: 16px;
-    }
-    
-    .Policy {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-    }
-    
-    .Mr40 {
-        margin: 20px;
-    }
-}
-
-/* Очень маленькие экраны (360px и меньше) */
-@media (max-width: 360px) {
-    .nav-bar a {
-        font-size: 8px;
-    }
-    
-    .fs-40 {
-        font-size: 24px;
-    }
-    
-    .HaW500 {
-        width: 200px;
-    }
-    
-    /* Минимальный размер для текста */
-    .text-boxsize h3 {
-        font-size: 20px;
-    }
-    
-    .footer2 h1 {
-        font-size: 24px;
-    }
-    
-    .footer2 input {
-        font-size: 14px;
-    }
-    
-    .gallery-slide {
-        height: 200px;
-    }
-    .flex-horizontal-contact{
-        margin-top: 2px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-
-/* Ландшафтная ориентация на мобильных */
-@media (max-height: 500px) and (orientation: landscape) {
-    header {
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .content-vid {
-        margin-top: 40px;
-    }
-    
-    /* В ландшафте можно оставить горизонтальное расположение */
-    .text-boxsize {
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    
-    .footer2 {
-        min-height: auto;
-        padding-top: 50px;
-    }
-}
-
-/* Высокие экраны */
-@media (min-height: 1000px) {
-    .footer2 {
-        min-height: 70vh;
-    }
-}
-
-/* Исправление для flex-контейнеров */
-.flex-vertical,
-.flex-horizontal {
-    flex-wrap: wrap;
-}
-
-
-
-
-
-/* Улучшение читаемости на маленьких экранах */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-        text-align: center;
-    }
-    
-    .flex-horizontal-contact{
-        margin-top: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-
-    .nav-bar {
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1001;
         position: relative;
     }
     
-    /* Показываем бургер-кнопку */
-    .burger-menu {
-        display: flex;
+    .burger-menu span {
+        width: 25px;
+        height: 3px;
+        background: aliceblue;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
     }
     
-    /* Скрываем обычное меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
     .nav-links {
         position: fixed;
         top: 0;
@@ -1256,7 +540,6 @@ footer {
         gap: 0;
     }
     
-    /* Показываем меню когда активно */
     .nav-links.active {
         right: 0;
     }
@@ -1268,7 +551,6 @@ footer {
         border-bottom: 1px solid rgba(255,255,255,0.1);
         text-align: left;
         width: 100%;
-        margin-left: 0;
     }
     
     .nav-links a:last-child {
@@ -1279,48 +561,176 @@ footer {
         color: khaki;
         transform: translateX(10px);
     }
-
+    
+    .messenger-group{
+        display: none;
+    }
+    .contacts{
+        display: none;
+    }
+    .ht{
+        display: none;
+    }
 }
 
-/* Плавные переходы для всех интерактивных элементов */
-* {
-    transition: all 0.3s ease;
+@media (max-width: 1024px) {
+    .HaW500 {
+        width: 400px;
+    }
+    .fs-40 {
+        font-size: 48px;
+    }
+    .section-for {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer2 input {
+        width: 500px;
+    }
+    .footer2 h1 {
+        font-size: 48px;
+        margin-top: 150px;
+    }
 }
 
-/* Убираем горизонтальный скролл */
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
+@media (max-width: 768px) {
+    .HaW500 {
+        width: 300px;
+    }
+    .fs-40 {
+        font-size: 36px;
+    }
+    .section-for h2 {
+        font-size: 36px;
+        margin-top: 60px;
+    }
+    .group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .item {
+        padding: 20px;
+    }
+    .gallery-slide {
+        height: 300px;
+    }
+    .footer2 {
+        min-height: auto;
+        padding: 50px 20px 20px;
+    }
+    .footer2 h1 {
+        font-size: 36px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+    .footer2 input {
+        width: 90%;
+        max-width: 400px;
+        font-size: 18px;
+    }
+    .fmb {
+        margin-top: 50px;
+    }
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-boxsize {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    .text-boxsize h3 {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .HaW500 {
+        width: 250px;
+    }
+    .flex-horizontal-contact{
+        padding-top: 10px;
+    }
+    .fs-40 {
+        font-size: 28px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .section-for h2 {
+        font-size: 28px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    .item {
+        padding: 15px;
+    }
+    .gallery-section {
+        padding: 40px 15px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .gallery-slide {
+        height: 250px;
+    }
+    .flex-horizontal-contact{
+        margin-top: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .footer2 h1 {
+        font-size: 28px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .footer2 input {
+        width: 95%;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .Policy {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    .Mr40 {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .fs-40 {
+        font-size: 24px;
+    }
+    .HaW500 {
+        width: 200px;
+    }
+    .text-boxsize h3 {
+        font-size: 20px;
+    }
+    .footer2 h1 {
+        font-size: 24px;
+    }
+    .footer2 input {
+        font-size: 14px;
+    }
+    .gallery-slide {
+        height: 200px;
+    }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== НОВАЯ СЕКЦИЯ МАСТЕРОВ ===== */
 .masters-section {
     background-image: url('../img/Fon.png');
-    
     padding: 60px 20px;
     position: relative;
 }
@@ -1333,14 +743,12 @@ html, body {
     font-family: 'TrajanPro3Regular', TrajanPro3Regular;
 }
 
-/* Карусель */
 .masters-carousel {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
 
-/* СЕТКА НА ДЕСКТОПЕ */
 .carousel-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1348,7 +756,6 @@ html, body {
     padding: 20px 0;
 }
 
-/* СКРОЛЛ НА МОБИЛЬНЫХ */
 @media (max-width: 1024px) {
     .carousel-container {
         display: flex;
@@ -1367,17 +774,12 @@ html, body {
     .carousel-container::-webkit-scrollbar {
         display: none;
     }
-    
-    .carousel-container:active {
-        cursor: grabbing;
-    }
 }
 
 .carousel-track {
-    display: contents; /* Для сетки */
+    display: contents;
 }
 
-/* На мобильных возвращаем flex для скролла */
 @media (max-width: 1024px) {
     .carousel-track {
         display: flex;
@@ -1387,18 +789,19 @@ html, body {
     }
 }
 
-/* Карточка мастера */
 .master-card {
-    background: #1a1a1a;
+    
     border-radius: 15px;
     overflow: hidden;
-    border: 2px solid #FFD700;
+    border: 2px solid;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(black, black) padding-box,
+        linear-gradient(135deg, #C49938, #E6C878, #edc65a) border-box;
     transition: transform 0.3s ease;
-    /* Для сетки на десктопе */
     width: 100%;
 }
 
-/* На мобильных фиксированная ширина для скролла */
 @media (max-width: 1024px) {
     .master-card {
         flex: 0 0 300px;
@@ -1409,7 +812,6 @@ html, body {
     transform: translateY(-5px);
 }
 
-/* Фото 3×4 */
 .master-photo {
     width: 100%;
     height: 400px;
@@ -1423,7 +825,6 @@ html, body {
     object-position: center top;
 }
 
-/* Информация */
 .master-info {
     padding: 25px;
     text-align: center;
@@ -1455,7 +856,7 @@ html, body {
 
 .master-params span {
     color: #FFD700;
-    font-weight: bold;
+    
 }
 
 .master-btn {
@@ -1475,11 +876,10 @@ html, body {
     color: #000;
 }
 
-/* Кнопка ПОКАЗАТЬ ЕЩЕ */
 .show-more-container {
     text-align: center;
     margin-top: 40px;
-    grid-column: 1 / -1; /* Занимает всю ширину сетки */
+    grid-column: 1 / -1;
 }
 
 .show-more-btn {
@@ -1500,72 +900,16 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* Скрываем кнопку на мобильных */
 @media (max-width: 1024px) {
     .show-more-container {
         display: none;
     }
 }
 
-/* Кнопки навигации - СКРЫВАЕМ */
-.carousel-nav {
-    display: none !important;
-}
-
-/* Индикаторы - СКРЫВАЕМ */
-.carousel-dots {
-    display: none !important;
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-    .master-card {
-        flex: 0 0 300px;
-    }
-    
-    .master-photo {
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .master-card {
-        flex: 0 0 280px;
-    }
-    
-    .master-photo {
-        height: 320px;
-    }
-    
-    .masters-title {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 480px) {
-    .master-card {
-        flex: 0 0 260px;
-    }
-    
-    .master-photo {
-        height: 300px;
-    }
-    
-    .master-info {
-        padding: 20px;
-    }
-    
-    .masters-section {
-        padding: 40px 15px;
-    }
-}
-
-/* Класс для скрытия карточек */
 .master-card.hidden {
     display: none;
 }
 
-/* Когда показываем все карточки */
 .carousel-container.expanded {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1573,8 +917,11 @@ html, body {
 }
 
 
+* {
+    transition: all 0.3s ease;
+}
 
-
-
-
-809
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}

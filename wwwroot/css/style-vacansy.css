@@ -447,7 +447,6 @@ a:hover {
         padding-left: 10px;
         padding-right: 10px;
     }
-    
     .burger-head{
     display: flex;
     }
@@ -455,14 +454,10 @@ a:hover {
         border-bottom-width: 0px;
         margin-right: 5px;
         width: auto;
-        
     }
     .burger-head .messenger-group div{
         margin-right: 15px;
-        display: flex;
-    
     }
-    
     .burger-menu {
         display: flex;
         flex-direction: column;
@@ -521,13 +516,22 @@ a:hover {
         width: 100%;
     }
     
-    .messenger-group {
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a:hover {
+        color: khaki;
+        transform: translateX(10px);
+    }
+    
+    .messenger-group{
         display: none;
     }
-    .contacts {
+    .contacts{
         display: none;
     }
-    .ht {
+    .ht{
         display: none;
     }
 }

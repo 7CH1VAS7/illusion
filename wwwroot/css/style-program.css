@@ -476,7 +476,6 @@ a:hover {
         padding-left: 10px;
         padding-right: 10px;
     }
-    
     .burger-head{
     display: flex;
     }
@@ -488,7 +487,6 @@ a:hover {
     .burger-head .messenger-group div{
         margin-right: 15px;
     }
-    
     .burger-menu {
         display: flex;
         flex-direction: column;
@@ -547,13 +545,22 @@ a:hover {
         width: 100%;
     }
     
-    .messenger-group {
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a:hover {
+        color: khaki;
+        transform: translateX(10px);
+    }
+    
+    .messenger-group{
         display: none;
     }
-    .contacts {
+    .contacts{
         display: none;
     }
-    .ht {
+    .ht{
         display: none;
     }
 }

@@ -4,6 +4,9 @@ class BurgerMenu {
         this.navLinks = document.getElementById('navLinks');
         this.menuOverlay = this.createOverlay();
         
+        // Флаг для отслеживания состояния меню
+        this.isMenuOpen = false;
+        
         this.init();
     }
     
@@ -21,8 +24,11 @@ class BurgerMenu {
             this.toggleMenu();
         });
         
-        // Закрытие меню при клике на ссылку
+        // Предотвращаем закрытие при клике внутри меню
         this.navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // Закрытие меню при клике на ссылку
             if (e.target.tagName === 'A') {
                 this.closeMenu();
             }
@@ -31,6 +37,13 @@ class BurgerMenu {
         // Закрытие меню при клике на оверлей
         this.menuOverlay.addEventListener('click', () => {
             this.closeMenu();
+        });
+        
+        // Закрытие меню при клике в любом месте документа
+        document.addEventListener('click', (e) => {
+            if (this.isMenuOpen && !this.navLinks.contains(e.target) && !this.burgerMenu.contains(e.target)) {
+                this.closeMenu();
+            }
         });
         
         // Закрытие меню при изменении размера окна
@@ -42,19 +55,18 @@ class BurgerMenu {
         
         // Закрытие меню при нажатии Escape
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.navLinks.classList.contains('active')) {
+            if (e.key === 'Escape' && this.isMenuOpen) {
                 this.closeMenu();
             }
         });
     }
     
     toggleMenu() {
-        this.navLinks.classList.toggle('active');
-        this.burgerMenu.classList.toggle('active');
-        this.menuOverlay.classList.toggle('active');
-        
-        // Блокировка скролла тела когда меню открыто
-        document.body.style.overflow = this.navLinks.classList.contains('active') ? 'hidden' : '';
+        if (this.navLinks.classList.contains('active')) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
     }
     
     openMenu() {
@@ -62,6 +74,7 @@ class BurgerMenu {
         this.burgerMenu.classList.add('active');
         this.menuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        this.isMenuOpen = true;
     }
     
     closeMenu() {
@@ -69,6 +82,7 @@ class BurgerMenu {
         this.burgerMenu.classList.remove('active');
         this.menuOverlay.classList.remove('active');
         document.body.style.overflow = '';
+        this.isMenuOpen = false;
     }
 }
 

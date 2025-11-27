@@ -106,6 +106,45 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid khaki;
 }
 
+.service-btn {
+    position: absolute;
+    bottom: clamp(10px, 1.5vw, 15px);
+    right: clamp(10px, 1.5vw, 15px);
+    padding: clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 16px);
+    font-size: clamp(10px, 1.2vw, 12px);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid khaki;
+    color: khaki;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    font-family: 'TrajanPro3Regular', TrajanPro3Regular;
+}
+
+.service-btn:hover {
+    background: khaki;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .service-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+        bottom: 8px;
+        right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-btn {
+        padding: 4px 8px;
+        font-size: 9px;
+        bottom: 6px;
+        right: 6px;
+    }
+}
+
     
 
 .service-text {
@@ -204,6 +243,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .program-service {
+        height: auto;
         margin: 5px;
         min-height: clamp(120px, 30vh, 200px);
     }
@@ -251,6 +291,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .program-service {
+        height: auto;
         min-height: clamp(100px, 25vh, 150px);
     }
     
@@ -308,6 +349,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Для ландшафтной ориентации */
 @media (max-height: 500px) and (orientation: landscape) {
     .program-service {
+        height: auto;
         min-height: 80px;
     }
     

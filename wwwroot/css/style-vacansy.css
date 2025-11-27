@@ -448,12 +448,19 @@ a:hover {
         padding-right: 10px;
     }
     
-    .burger-head {
-        display: flex;
+    .burger-head{
+    display: flex;
     }
-    
-    .burger-head .messenger-group div {
+    .burger-head .messenger-group div a {
+        border-bottom-width: 0px;
+        margin-right: 5px;
+        width: auto;
+        
+    }
+    .burger-head .messenger-group div{
         margin-right: 15px;
+        display: flex;
+    flex-direction: column;
     }
     
     .burger-menu {

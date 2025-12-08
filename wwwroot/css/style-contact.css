@@ -623,11 +623,9 @@ footer {
         display: block !important;
     }
     .carousel-container {
-    /* Улучшаем производительность скролла */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     overscroll-behavior-x: contain;
-    /* Убираем возможные точки фиксации */
     scroll-snap-type: none !important;
     overscroll-behavior-x: contain;
     overscroll-behavior-y: auto;
@@ -811,7 +809,6 @@ footer {
     }
     
     .master-card:hover {
-        /* На мобильных устройствах ховер не должен работать */
         transform: none;
         box-shadow: none;
     }
@@ -834,7 +831,6 @@ footer {
 
 @media (max-width: 1024px) {
     .carousel-track {
-        /* Улучшаем рендеринг */
         will-change: transform;
         backface-visibility: hidden;
         user-select: none;
@@ -986,7 +982,6 @@ footer {
 
 
 .footer2 input[type="number"] {
-    /* Убираем скроллбар и стрелочки */
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
@@ -999,7 +994,6 @@ footer {
     margin: 0;
 }
 
-/* Или более конкретно для вашего инпута */
 .form-input[type="number"] {
     -webkit-appearance: none;
     -moz-appearance: textfield;
@@ -1022,8 +1016,6 @@ html, body {
     max-width: 100%;
 }
 
-/* Адаптивная сетка */
-/* =============== АДАПТИВНЫЙ MAIN =============== */
 
 .main-content {
     min-height: calc(100vh - 200px);
@@ -1039,7 +1031,6 @@ html, body {
     margin: 0 auto;
 }
 
-/* Левая часть: карта */
 .map-section {
     background: linear-gradient(black, black) padding-box,
                 linear-gradient(135deg, #C49938, #E6C878, #edc65a) border-box;
@@ -1065,8 +1056,6 @@ html, body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Правая часть: контакты */
-/* =============== MAIN ДЛЯ СТРАНИЦЫ КОНТАКТОВ =============== */
 .main-content {
     min-height: 70vh;
     background-color: black;
@@ -1081,10 +1070,9 @@ html, body {
     padding: 0 20px;
 }
 
-/* Блок карты */
 .map-section {
     flex: 1;
-    min-width: 0; /* Для правильного сжатия */
+    min-width: 0;
 }
 
 .map-title {
@@ -1105,7 +1093,6 @@ html, body {
                 linear-gradient(135deg, #C49938, #E6C878, #edc65a) border-box;
 }
 
-/* Блок контактов */
 .contacts-section {
     width: 380px;
     flex-shrink: 0;
@@ -1128,7 +1115,7 @@ html, body {
     text-align: center;
 }
 
-/* Элементы внутри карточки */
+
 .contacts-card .messenger-group {
     justify-content: center;
     margin: 0 0 25px 0;
@@ -1183,10 +1170,7 @@ html, body {
     text-align: center;
 }
 
-/* =============== АДАПТИВНОСТЬ =============== */
 
-/* Планшеты (1025px - 768px) */
-/* =============== MOBILE ВЕРСИЯ ДЛЯ СТРАНИЦЫ КОНТАКТОВ =============== */
 @media (max-width: 768px) {
     .main-content {
         padding: 30px 15px;
@@ -1206,7 +1190,6 @@ html, body {
         box-sizing: border-box;
     }
     
-    /* Карта */
     .map-section {
         width: 100%;
         max-width: 100%;
@@ -1234,7 +1217,6 @@ html, body {
         box-sizing: border-box;
     }
     
-    /* Контакты */
     .contacts-section {
         width: 100%;
         max-width: 100%;
@@ -1247,7 +1229,7 @@ html, body {
         width: 100%;
         max-width: 100%;
         padding: 20px 15px;
-        display: flex !important; /* Важно! */
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
@@ -1264,9 +1246,8 @@ html, body {
         word-wrap: break-word;
     }
     
-    /* Мессенджеры - ВАЖНО: не скрывать! */
     .contacts-card .messenger-group {
-        display: flex !important; /* Переопределяем display: none */
+        display: flex !important;
         justify-content: center;
         margin: 0 0 20px 0;
         width: 100%;
@@ -1285,9 +1266,8 @@ html, body {
         max-width: 100%;
     }
     
-    /* Контактные данные - ВАЖНО: не скрывать! */
     .contacts-card .contacts {
-        display: flex !important; /* Переопределяем display: none */
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -1327,7 +1307,6 @@ html, body {
         color: #999 !important;
     }
     
-    /* Кнопка */
     .contacts-card .taxi-order {
         width: 100%;
         padding: 0 10px;
@@ -1347,25 +1326,8 @@ html, body {
     }
 }
 
-/* УБИРАЕМ старый медиа-запрос, который скрывал контакты */
-/* УДАЛИ ЭТОТ БЛОК ИЗ ТВОЕГО CSS: */
-/*
-@media (max-width: 1429px){
-    .messenger-group{
-        display: none;
-    }
-    .contacts{
-        display: none;
-    }
-    footer .burger-menu{
-        display: none;
-    }
-}
-*/
 
-/* ВМЕСТО ЭТОГО ДОБАВЬ ТАКОЙ (только для хедера): */
 @media (max-width: 1429px) {
-    /* Скрываем только в хедере, но не в .contacts-card */
     .header_sky-const .messenger-group {
         display: none;
     }
@@ -1377,7 +1339,7 @@ html, body {
     }
 }
 
-/* Маленькие мобилки (до 480px) */
+
 @media (max-width: 480px) {
     .main-content {
         padding: 20px 10px;
@@ -1425,7 +1387,6 @@ html, body {
     }
 }
 
-/* Очень маленькие мобилки (до 360px) */
 @media (max-width: 360px) {
     .map-title,
     .section-title {

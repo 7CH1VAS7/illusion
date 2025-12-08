@@ -13,28 +13,22 @@ class Gallery {
     }
     
     init() {
-        // Проверяем есть ли элементы
         if (!this.track || this.slideCount === 0) {
             console.warn('Галерея не найдена или нет слайдов');
             return;
         }
         
-        // Создаем точки-индикаторы
         this.createDots();
         
-        // Вешаем обработчики событий
         this.prevBtn.addEventListener('click', () => this.prevSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
         
-        // Добавляем обработчики для точек
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => this.goToSlide(index));
         });
         
-        // Обработка ошибок загрузки изображений
         this.handleImageErrors();
         
-        // Автопрокрутка (опционально)
         this.startAutoSlide();
         
         console.log('Галерея инициализирована, слайдов:', this.slideCount);
@@ -42,9 +36,7 @@ class Gallery {
     
     createDots() {
         this.dots = [];
-        this.dotsContainer.innerHTML = ''; // Очищаем контейнер
-        
-        // Создаем только 10 точек максимум для удобства
+        this.dotsContainer.innerHTML = '';
         const maxDots = Math.min(this.slideCount, 10);
         
         for (let i = 0; i < maxDots; i++) {
@@ -62,7 +54,6 @@ class Gallery {
             if (img) {
                 img.onerror = () => {
                     console.warn(`Ошибка загрузки изображения: ${img.src}`);
-                    // Можно добавить заглушку
                     img.style.display = 'none';
                     const placeholder = document.createElement('div');
                     placeholder.className = 'image-placeholder';
@@ -89,10 +80,7 @@ class Gallery {
     }
     
     updateGallery() {
-        // Перемещаем трек
         this.track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
-        
-        // Обновляем активную точку
         const dotIndex = Math.floor(this.currentSlide / Math.ceil(this.slideCount / this.dots.length));
         this.dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === dotIndex);
@@ -100,13 +88,11 @@ class Gallery {
     }
     
     startAutoSlide() {
-        // Автопрокрутка каждые 5 секунд
         this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
         }, 5000);
     }
     
-    // Остановка автопрокрутки при наведении
     stopAutoSlide() {
         if (this.autoSlideInterval) {
             clearInterval(this.autoSlideInterval);
@@ -114,7 +100,6 @@ class Gallery {
     }
 }
 
-// Инициализация галереи когда DOM загружен
 document.addEventListener('DOMContentLoaded', () => {
     new Gallery();
 });

@@ -615,11 +615,9 @@ footer {
         display: block !important;
     }
     .carousel-container {
-    /* Улучшаем производительность скролла */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     overscroll-behavior-x: contain;
-    /* Убираем возможные точки фиксации */
     scroll-snap-type: none !important;
     overscroll-behavior-x: contain;
     overscroll-behavior-y: auto;
@@ -802,7 +800,6 @@ footer {
     }
     
     .master-card:hover {
-        /* На мобильных устройствах ховер не должен работать */
         transform: none;
         box-shadow: none;
     }
@@ -825,7 +822,6 @@ footer {
 
 @media (max-width: 1024px) {
     .carousel-track {
-        /* Улучшаем рендеринг */
         will-change: transform;
         backface-visibility: hidden;
         user-select: none;
@@ -977,7 +973,6 @@ footer {
 
 
 .footer2 input[type="number"] {
-    /* Убираем скроллбар и стрелочки */
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
@@ -990,7 +985,6 @@ footer {
     margin: 0;
 }
 
-/* Или более конкретно для вашего инпута */
 .form-input[type="number"] {
     -webkit-appearance: none;
     -moz-appearance: textfield;

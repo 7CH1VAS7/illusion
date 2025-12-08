@@ -4,7 +4,6 @@ class BurgerMenu {
         this.navLinks = document.getElementById('navLinks');
         this.menuOverlay = this.createOverlay();
         
-        // Флаг для отслеживания состояния меню
         this.isMenuOpen = false;
         
         this.init();
@@ -18,42 +17,35 @@ class BurgerMenu {
     }
     
     init() {
-        // Обработчик клика по бургеру
         this.burgerMenu.addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggleMenu();
         });
         
-        // Предотвращаем закрытие при клике внутри меню
         this.navLinks.addEventListener('click', (e) => {
             e.stopPropagation();
             
-            // Закрытие меню при клике на ссылку
             if (e.target.tagName === 'A') {
                 this.closeMenu();
             }
         });
-        
-        // Закрытие меню при клике на оверлей
+
         this.menuOverlay.addEventListener('click', () => {
             this.closeMenu();
         });
         
-        // Закрытие меню при клике в любом месте документа
         document.addEventListener('click', (e) => {
             if (this.isMenuOpen && !this.navLinks.contains(e.target) && !this.burgerMenu.contains(e.target)) {
                 this.closeMenu();
             }
         });
         
-        // Закрытие меню при изменении размера окна
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 this.closeMenu();
             }
         });
         
-        // Закрытие меню при нажатии Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.isMenuOpen) {
                 this.closeMenu();
@@ -86,7 +78,6 @@ class BurgerMenu {
     }
 }
 
-// Инициализация когда DOM загружен
 document.addEventListener('DOMContentLoaded', () => {
     new BurgerMenu();
 });

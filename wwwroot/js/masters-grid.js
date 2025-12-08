@@ -1,4 +1,3 @@
-// masters-grid.js - сетка с кнопкой "Показать еще"
 console.log('🚀 Запуск карусели с сеткой');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     showMoreBtn.addEventListener('click', function() {
         if (!isExpanded) {
-            // Показываем все карточки
             hiddenCards.forEach(card => {
                 card.classList.remove('hidden');
             });
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isExpanded = true;
             console.log('📖 Показаны все карточки');
         } else {
-            // Скрываем дополнительные карточки
             hiddenCards.forEach(card => {
                 card.classList.add('hidden');
             });
@@ -38,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showMoreBtn.textContent = 'ПОКАЗАТЬ ЕЩЕ';
             isExpanded = false;
             console.log('📕 Скрыты дополнительные карточки');
-            
-            // Прокрутка к началу секции
             container.scrollIntoView({ behavior: 'smooth' });
         }
     });

@@ -83,54 +83,49 @@ header{
     text-align: center;
     flex-direction: column;
     align-items: center;
-    /* ДОБАВЛЯЕМ ЭТИ СТРОКИ: */
-    min-width: 0; /* Разрешаем сжатие */
-    word-wrap: break-word; /* Перенос длинных слов */
+    min-width: 0;
+    word-wrap: break-word;
 }
-
-/* ОБЯЗАТЕЛЬНО добавить для текста внутри */
 .cre div h1.gradient-text,
 .cre div p {
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
-/* Адаптивность ТОЛЬКО для этой секции */
 @media (max-width: 1024px) {
     .cre{
         grid-template-columns: repeat(1, 1fr);
     }
     
     .cre div {
-        max-width: 600px; /* Ограничиваем максимальную ширину на планшетах */
+        max-width: 600px;
         width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .cre div {
-        max-width: 100%; /* На мобильных занимает всю ширину */
-        margin: 0 auto; /* Центрируем */
+        max-width: 100%;
+        margin: 0 auto;
     }
     
     .cre div h1.gradient-text {
-        font-size: 24px; /* Уменьшаем размер заголовков */
+        font-size: 24px;
     }
     
     .cre div p {
-        font-size: 14px; /* Уменьшаем размер текста */
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     .cre{
-        margin: 0px 5px 10px 5px; /* Уменьшаем внешние отступы */
-        gap: 10px; /* Уменьшаем расстояние между блоками */
+        margin: 0px 5px 10px 5px;
+        gap: 10px;
     }
     
     .cre div {
-        padding: 15px 10px; /* Уменьшаем внутренние отступы */
+        padding: 15px 10px;
     }
     
     .cre div h1.gradient-text {
@@ -145,7 +140,7 @@ header{
     background-image: url('../img/vf.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* опционально для параллакс эффекта */
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -227,10 +222,8 @@ header{
     transition: all 0.3s ease;
 }
 
-
-/* Исправление для футера */
 footer{
-    margin: 100px 20px; /* Добавляем горизонтальные отступы */
+    margin: 100px 20px;
     text-align: center;
 }
 
@@ -239,10 +232,9 @@ footer div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Добавляем расстояние между заголовком и кнопкой */
+    gap: 30px;
 }
 
-/* Адаптивность ТОЛЬКО для футера */
 @media (max-width: 1024px) {
     footer{
         margin: 80px 20px;
@@ -301,10 +293,6 @@ footer div{
     text-align: center;
 }
 
-
-
-
-/* Основные стили для header */
 .header_sky-const {
     display: flex;
     padding-top: 5px;
@@ -330,7 +318,6 @@ a:hover {
     color: khaki;
 }
 
-/* Логотипы */
 .HaW150 {
     height: auto;
     width: 150px;
@@ -341,7 +328,6 @@ a:hover {
     width: 500px;
 }
 
-/* Контакты и мессенджеры */
 .messenger-group {
     display: flex;
     align-items: center;
@@ -359,7 +345,6 @@ a:hover {
     margin-right: 10px;
 }
 
-/* Кнопки */
 .btn {
     font-family: 'TrajanPro3Regular', TrajanPro3Regular;
     display: inline-block;
@@ -372,7 +357,6 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-/* Flex контейнеры */
 .flex-vertical {
     display: flex;
     align-items: center;
@@ -389,7 +373,6 @@ a:hover {
     align-items: center;
 }
 
-/* Контент в header */
 .content-vid {
     margin-top: 120px;
     height: 400px;
@@ -411,7 +394,6 @@ a:hover {
     font-size: 60px;
 }
 
-/* Навигация */
 .nav-bar a {
     font-size: 12px;
     font-family: 'TrajanPro3Regular', TrajanPro3Regular;
@@ -422,7 +404,6 @@ a:hover {
     gap: 20px;
 }
 
-/* Бургер меню (скрыто по умолчанию) */
 .burger-menu {
     display: none;
 }
@@ -431,7 +412,6 @@ a:hover {
     display: none;
 }
 
-/* Адаптивность */
 @media (max-width: 1429px) {
     .messenger-group {
         display: none;

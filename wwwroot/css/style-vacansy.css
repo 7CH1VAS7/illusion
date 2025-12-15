@@ -141,7 +141,6 @@ header{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -149,7 +148,7 @@ header{
 .mask {
     background-color: rgba(0, 0, 0, 0.816);
     width: 100%;
-    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -222,18 +221,7 @@ header{
     transition: all 0.3s ease;
 }
 
-footer{
-    margin: 100px 20px;
-    text-align: center;
-}
 
-footer div{
-    font-size: 38px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
 
 @media (max-width: 1024px) {
     footer{
@@ -408,6 +396,21 @@ a:hover {
     display: none;
 }
 
+.Policy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+    .Policy a p {
+        color: white;
+    }
+    .Policy p {
+    color: #ccc;
+    }
+
+
 .burger-head {
     display: none;
 }
@@ -513,6 +516,11 @@ a:hover {
     }
     .ht{
         display: none;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
 

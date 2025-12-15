@@ -461,6 +461,9 @@ footer {
     text-align: center;
     text-align: center;
 }
+.Policy p {
+    color: #ccc;
+}
 
 .text-boxsize h3 span {
     white-space: nowrap;
@@ -734,10 +737,17 @@ footer {
         margin-bottom: 30px;
     }
     .Policy {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         text-align: center;
         gap: 5px;
-        
+    }
+    .Policy a p {
+        color: white;
+    }
+    .Policy p {
+    color: #ccc;
     }
     .Mr40 {
         margin: 20px;
